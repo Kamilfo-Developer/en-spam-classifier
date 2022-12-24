@@ -50,3 +50,6 @@ class NNModel:
 
     def evaluate(self, X: DataFrame, y: DataFrame):
         return self.model.evaluate(X, y)
+
+    def is_spam(self, X: DataFrame):
+        return True if self.model.predict(X) > 0.5 else False
